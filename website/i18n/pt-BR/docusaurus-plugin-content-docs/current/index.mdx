@@ -1,0 +1,278 @@
+---
+title: Primeiros Passos
+description: 🐷 Poku é seu Test Runner de Estimação para Node.js, Bun e Deno.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { FAQ } from '@site/src/components/FAQ';
+import { Logo } from '@site/src/components/Logo';
+import { useColorMode } from '@docusaurus/theme-common';
+import Link from '@docusaurus/Link';
+import Success from '@site/static/img/success.svg';
+import '@site/src/css/features.scss';
+
+[node-version-url]: https://github.com/nodejs/node
+[node-version-image]: https://img.shields.io/badge/Node.js->=%206.0.0-badc58
+[bun-version-url]: https://github.com/oven-sh/bun
+[bun-version-image]: https://img.shields.io/badge/Bun->=%200.5.3-f471b5
+[deno-version-url]: https://github.com/denoland/deno
+[deno-version-image]: https://img.shields.io/badge/Deno->=%201.30.0-70ffaf
+[npm-image]: https://img.shields.io/npm/v/poku.svg?color=3dc1d3
+[npm-url]: https://npmjs.org/package/poku
+[typescript-url]: https://github.com/microsoft/TypeScript
+[typescript-version-image]: https://img.shields.io/badge/TypeScript->=%204.7.2-3077c6
+[ci-url]: https://github.com/wellwelwel/poku/actions/workflows/ci.yml?query=branch%3Amain
+[ci-image]: https://img.shields.io/github/actions/workflow/status/wellwelwel/poku/ci.yml?event=push&style=flat&label=CI&branch=main
+[ql-url]: https://github.com/wellwelwel/poku/actions/workflows/codeql.yml?query=branch%3Amain
+[ql-image]: https://img.shields.io/github/actions/workflow/status/wellwelwel/poku/ci-codeql.yml?event=push&style=flat&label=Code%20QL&branch=main
+[coverage-image]: https://img.shields.io/codecov/c/github/wellwelwel/poku?label=Cobertura
+[coverage-url]: https://app.codecov.io/github/wellwelwel/poku
+[downloads-image]: https://img.shields.io/npm/dt/poku.svg?&color=FFC312&label=Downloads
+[downloads-url]: https://npmjs.org/package/poku
+[license-url]: https://github.com/wellwelwel/poku/blob/main/LICENSE
+[license-image]: https://img.shields.io/npm/l/poku.svg?maxAge=2592000&color=9c88ff&label=Licença
+
+<div className='title-section'>
+<aside>
+
+# Primeiros Passos
+
+**Poku** é seu Test Runner de Estimação para [**Node.js**][node-version-url], [**Bun**][bun-version-url] e [**Deno**][deno-version-url].
+
+[![Node.js Version][node-version-image]][node-version-url]
+[![Bun Version][bun-version-image]][bun-version-url]
+[![Deno Version][deno-version-image]][deno-version-url]
+[![TypeScript Version][typescript-version-image]][typescript-url]<br />
+[![GitHub Workflow Status (with event)][ci-image]][ci-url]
+[![GitHub Workflow Status (with event)][ql-image]][ql-url]
+[![Coverage][coverage-image]][coverage-url]
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![License][license-image]][license-url]
+
+Curtindo o **Poku**? Considere dar uma estrela pra ele ⭐️
+
+</aside>
+  <aside>
+    <Logo className='logo' width={128} height={128} />
+  </aside>
+</div>
+
+<hr />
+
+## Por que usar o Poku?
+
+Ao criar o **Poku**, meu objetivo é mostrar que tests podem ser simples 🌱
+
+<div className='features black'>
+  <div className='p'>
+    <Success />
+    <span>Você não precisa aprender tudo de uma vez 🧑🏻‍🎓</span>
+  </div>
+  <div className='p'>
+    <Success />
+    <span>
+      Vamos tornar os `describe`, `beforeEach` e tudo mais ainda mais fáceis 🚀
+    </span>
+  </div>
+  <div className='p'>
+    <Success />
+    <span>
+      **Poku** traz testes e asserções amigáveis para
+      [**Node.js**][node-version-url], [**Bun**][bun-version-url] e
+      [**Deno**][deno-version-url] ao mesmo tempo ✨
+    </span>
+  </div>
+</div>
+
+<br />
+
+> 🔬 Comece vendo como usar o `assert` <br />
+> 🧪 Então aprenda a usar o `poku` no terminal para executar todos seus arquivos de uma vez só <br />
+> 🧙🏻 Finalmente, apenas se você quiser, se aprofunde no aprendizado completo do **Poku** <br />
+>
+> 🩵 Leve seu tempo
+
+- [**Compare o Poku com os Test Runners mais Populares 🧪**](/docs/comparing)
+
+<hr />
+
+## Començando
+
+### **Instale** 📦
+
+[![Install Size](https://packagephobia.com/badge?p=poku)](https://packagephobia.com/result?p=poku)
+
+<Tabs>
+  <TabItem default value='Node.js'>
+
+```bash
+npm i -D poku
+```
+
+  </TabItem>
+  <TabItem  value='TypeScript (Node.js)'>
+
+```bash
+npm i -D poku tsx
+```
+
+  </TabItem>
+  <TabItem  value='Bun'>
+
+```bash
+bun add -d poku
+```
+
+  </TabItem>
+  <TabItem  value='Deno'>
+
+```ts
+import { poku } from 'npm:poku';
+```
+
+Você também pode usar o **Poku** via [**esm.sh**](https://esm.sh):
+
+```ts
+import { poku } from 'https://esm.sh/poku';
+```
+
+  </TabItem>
+</Tabs>
+
+### **Teste** 🔬
+
+<Tabs>
+  <TabItem default value='test/file.test.js'>
+
+```ts
+import { assert } from 'poku';
+
+assert(true, 'Poku irá descrever isso 🐷');
+```
+
+  </TabItem>
+</Tabs>
+
+> Note que os exemplos são baseados em [**ESM**](/docs/examples/cjs-esm), mas você pode usar [**CJS**](/docs/examples/cjs-esm) normalmente.
+
+### **Execute** 🚀
+
+<Tabs>
+  <TabItem default value='Node.js and TypeScript (Node.js)'>
+
+```bash
+npx poku
+```
+
+  </TabItem>
+  <TabItem  value='Bun'>
+
+```bash
+bun poku
+```
+
+  </TabItem>
+  <TabItem  value='Deno'>
+
+```bash
+deno run npm:poku
+```
+
+    **Poku** requer as seguintes as seguintes permissões por padrão:
+      - `--allow-read`
+      - `--allow-env`
+      - `--allow-run`
+
+  </TabItem>
+</Tabs>
+
+### **É isso** 🎉
+
+- [**Veja a documentação completa do `assert`**](/docs/documentation/assert).
+- [**Veja a documentação completa do `poku`**](/docs/category/poku).
+
+<hr />
+
+## Métodos Disponíveis
+
+### Essenciais
+
+- [**poku**](/docs/category/poku) (_test runner_)
+- [**assert**](/docs/documentation/assert) (_testes de asserção_)
+- [**startScript**](/docs/documentation/startScript) (_execute scripts do `package.json` em segundo plano_)
+- [**startService**](/docs/documentation/startService) (_execute arquivos em segundo plano_)
+
+### Auxiliares
+
+- `test`
+- `beforeEach` e `afterEach`
+- `describe` e `log`
+- `listFiles`
+- `exit`
+
+[**Veja a documentação completa**](/docs/category/documentation).
+
+<hr />
+
+## Documentação
+
+> Inicialmente, a [**documentação**](/docs/category/documentation) e [**exemplos**](/docs/category/examples) são baseados no **Node.js** e **ESM**, mas você pode usar tudo normalmente para **Bun** e **Deno**, além do **CJS**.
+
+<hr />
+
+## Comunidade
+
+Eu estou continuamente trabalhando para melhorar o **Poku**. Se você tem algo interessante para compartilhar, sinta-se à vontade para submeter um [**Pull Request**](https://github.com/wellwelwel/poku/compare). Se você percebeu algo estranho, eu apreciaria se você abrisse um [**Issue**](https://github.com/wellwelwel/poku/issues/new).
+
+<hr />
+
+## Contribuindo
+
+Verifique o [**CONTRIBUTING.md**](https://github.com/wellwelwel/poku/blob/main/CONTRIBUTING.md) para instruções 🚀
+
+<hr />
+
+## Licença
+
+Poku está sob a [**Licença do MIT**](https://github.com/wellwelwel/poku/blob/main/LICENSE).
+
+<hr />
+
+## Política de Segurança
+
+Verifique o [**SECURITY.md**](https://github.com/wellwelwel/poku/blob/main/SECURITY.md) e a seção [**O Poku é Seguro?**](/docs/security) na Documentation.
+
+<hr />
+
+## Agradecimentos
+
+[![Contribuidores](https://img.shields.io/github/contributors/wellwelwel/poku?label=Contribuidores)](https://github.com/wellwelwel/poku/graphs/contributors)
+
+<a
+  href='https://github.com/wellwelwel/poku/graphs/contributors'
+  target='_blank'
+  rel='noopener noreferrer'
+  style={{ textDecoration: 'none', color: 'inherit' }}
+>
+  <img
+    src='https://opencollective.com/poku/contributors.svg?width=890&button=false'
+    alt='Contribuidores'
+    style={{ maxWidth: '100%' }}
+  />
+</a>
+
+<hr />
+
+## Author
+
+<a href='https://github.com/wellwelwel'>
+  <img
+    src='https://avatars.githubusercontent.com/u/46850407'
+    alt='wellwelwel'
+    style={{ borderRadius: '50%', width: 64, height: 64 }}
+  />
+  <br />
+  <sub>@wellwelwel</sub>
+</a>

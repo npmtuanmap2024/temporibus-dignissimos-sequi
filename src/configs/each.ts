@@ -1,0 +1,32 @@
+/* c8 ignore start */
+export type Control = {
+  pause: () => void;
+  continue: () => void;
+  reset: () => void;
+};
+
+export type EachConfigs = {
+  status: boolean;
+  assert?: boolean;
+  test?: boolean;
+  cb?: () => unknown | Promise<unknown>;
+};
+
+export const each: {
+  before: EachConfigs;
+  after: EachConfigs;
+} = {
+  before: {
+    status: true,
+    cb: undefined,
+    assert: false,
+    test: true,
+  },
+  after: {
+    status: true,
+    cb: undefined,
+    assert: false,
+    test: true,
+  },
+};
+/* c8 ignore stop */

@@ -1,0 +1,107 @@
+@import 'mixins';
+
+.features {
+  p,
+  .p {
+    @include flex(row, center, flex-start);
+    gap: 7.5px;
+    margin: 0;
+    // word-break: keep-all;
+    opacity: 0;
+    animation: 0.25s run-poku 0.025s cubic-bezier(0.64, -0.14, 0.44, 1.36)
+      forwards;
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.075s * $i;
+      }
+    }
+
+    & > span,
+    & > a {
+      color: #fff;
+      // white-space: nowrap;
+
+      &.v-center {
+        @include flex(row, center, flex-start);
+        margin-left: -4px;
+      }
+
+      & > small {
+        padding: 2.5px 5px;
+        margin-left: 7.5px;
+        font-size: 10px;
+        border-radius: 5px;
+        background-color: #0088ff;
+        font-weight: 800;
+      }
+    }
+
+    & > span {
+      & > a {
+        color: #fff;
+      }
+    }
+
+    & > a {
+      font-weight: 600;
+    }
+
+    & > svg {
+      min-width: 18px;
+      width: 18px;
+      min-height: 18px;
+      height: 18px;
+    }
+  }
+
+  &.black {
+    color: #000;
+
+    p,
+    .p {
+      color: #000;
+
+      & > span,
+      & > a {
+        & > small {
+          color: #fff;
+        }
+      }
+
+      & > span {
+        color: #000;
+
+        & > a {
+          color: var(--ifm-link-color);
+        }
+
+        & > p,
+        .p {
+          display: inline-block;
+        }
+      }
+
+      & > a {
+        color: var(--ifm-link-color);
+      }
+    }
+  }
+}
+
+.poku-runned {
+  filter: hue-rotate(104deg);
+}
+
+html[data-theme='dark'] {
+  .features {
+    p,
+    .p {
+      color: #fff;
+
+      & > span {
+        color: #fff;
+      }
+    }
+  }
+}

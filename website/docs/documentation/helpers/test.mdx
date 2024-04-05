@@ -1,0 +1,59 @@
+---
+sidebar_position: 3
+---
+
+# test
+
+> `test(() => void)`
+
+`test` is a helper to assist you in such cases:
+
+- Use the [`beforeEach` and `afterEach`](/docs/documentation/helpers/before-after-each/in-code) for each `test` performed
+- Isolate or group your tests in the same file
+- Run tests in the same file in parallel
+
+## Basic Usage
+
+```ts
+import { test, assert } from 'poku';
+
+test(() => {
+  const myVar = 'a';
+
+  assert.strictEqual(myVar, 'a', 'My first test helper');
+});
+
+test(() => {
+  const myVar = 'b';
+
+  assert.strictEqual(myVar, 'b', 'My second test helper');
+});
+```
+
+## By using promises
+
+```ts
+import { test, assert } from 'poku';
+
+await test(async () => {
+  // do anything you want
+});
+
+await test(async () => {
+  // do anything you want
+});
+```
+
+## Running in Parallel
+
+```ts
+import { test, assert } from 'poku';
+
+test(async () => {
+  // do anything you want
+});
+
+test(async () => {
+  // do anything you want
+});
+```
